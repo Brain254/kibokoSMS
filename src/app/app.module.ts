@@ -23,7 +23,7 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatIconModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -32,6 +32,7 @@ import { MatInputModule } from '@angular/material';
     ReactiveFormsModule,
     HttpModule,
     ComponentsModule,
+    MatIconModule,
     RouterModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
@@ -45,7 +46,7 @@ import { MatInputModule } from '@angular/material';
     AdminLayoutComponent,
     LoginComponent
     
-    
+              
 
   ],
   providers: [],

@@ -1,21 +1,26 @@
+import { RegisterUserComponent } from './auth/register-user/register-user.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
     path: 'login',
     pathMatch: 'full',
     component:LoginComponent
+  },
+  {
+    path: 'register',
+    component:RegisterUserComponent
   },
 
    {
@@ -33,7 +38,7 @@ const routes: Routes =[
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes,{
-       useHash: false
+       useHash: true
     })
   ],
   exports: [

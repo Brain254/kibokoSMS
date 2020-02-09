@@ -1,3 +1,4 @@
+import { AuthService } from './shared/services/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,9 +23,15 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { MatInputModule, MatIconModule } from '@angular/material';
-
+import { RegisterUserComponent } from './auth/register-user/register-user.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { VerifyEmailAddressComponent } from './auth/verify-email-address/verify-email-address.component';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'environments/environment';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -39,17 +46,23 @@ import { MatInputModule, MatIconModule } from '@angular/material';
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
     MatInputModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
 
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterUserComponent,
+    ForgotPasswordComponent,
+    VerifyEmailAddressComponent
     
               
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

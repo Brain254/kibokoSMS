@@ -20,7 +20,7 @@ export class RegisterUserComponent implements OnInit {
   }
 
   onSubmit(userReg:FormGroup){
-    this.authservice.SignUp(userReg.controls.email,userReg.controls.password);
+    this.authservice.SignUp(userReg.controls.email.value,userReg.controls.password.value);
   }
 
 }

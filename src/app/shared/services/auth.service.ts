@@ -56,7 +56,7 @@ export class AuthService {
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    const uData: User = {
+    const uData:any= {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,

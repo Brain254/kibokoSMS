@@ -15,4 +15,9 @@ export const environment = {
         appId: "1:162112191092:web:08fc98f4dd3e4415b9af21",
         measurementId: "G-P2ZDDHM4QR"
     },
+    gateway:{
+      username:'Brainke',
+      password:'brke@321',
+      senderid:'SEMAPHON'
+    }
 };

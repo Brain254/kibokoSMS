@@ -9,17 +9,17 @@
             
             <div class="row">
               <div class="col-md-12">
-                <button class="btn btn-block btn-success">Login with Google</button>
+                <button class="btn btn-block btn-success" (click)="doGoogleLogin()">Login with Google</button>
               </div>
             </div>
             <br/>
-            <form>
+            <form id="ui-login" [formGroup]="userInfo" (ngSubmit)="doLogin(userInfo)">
               <div class="row">
               <div class="col-md-12">
                 
                 <mat-form-field class="example-full-width"  appearance="outline">
                   <mat-label><mat-icon><b>perm_identity</b></mat-icon> <b> Username/Email</b></mat-label>
-                  <input matInput placeholder="Username" />
+                  <input matInput placeholder="Username" formControlName="email"/>
                 </mat-form-field>
               </div>
             </div>
@@ -27,7 +27,7 @@
               <div class="col-md-12">
                 <mat-form-field appearance="outline" class="example-full-width">
                   <mat-label><mat-icon><b>vpn_key</b></mat-icon> <b> Password</b></mat-label>
-                  <input matInput name="password" type="password" />
+                  <input matInput name="password" type="password" formControlName="password" />
                 </mat-form-field>
               </div>
             </div>
@@ -40,7 +40,7 @@
               </button>
               </div>
               <div class="col-md-6">
-                <a routerlink="/register">Register User</a>
+                <a routerLink="/reset-password">Forgot Password?</a>
               </div>
               </div>
           </form>

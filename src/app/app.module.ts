@@ -11,6 +11,7 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
@@ -32,6 +33,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'environments/environment';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   imports: [
@@ -42,6 +44,7 @@ import { environment } from 'environments/environment';
     ComponentsModule,
     MatIconModule,
     RouterModule,
+    ToastrModule.forRoot(),
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
